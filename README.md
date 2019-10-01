@@ -29,4 +29,7 @@ creating docker image for spring boot
     docker tag spring-boot-docker jinkaravi504/spring-boot-docker
     
     docker push jinkaravi504/spring-boot-docker
+    
+ 5)Sonarqube
+  mvn sonar:sonar -Dsonar.host.url=http://localhost:8083 -Dsonar.login=8432c0bd97e175aea3a4f38ddca9c10c36a69001
    
