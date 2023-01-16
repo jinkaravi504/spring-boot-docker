@@ -38,6 +38,7 @@ pipeline {
 		    steps {
 			script{
 			    // Build the docker image using a Dockerfile
+			    sh 'pwd'
 			    docker.build("$IMAGE", "-f Dockerfile .")
 			}
 		    }
