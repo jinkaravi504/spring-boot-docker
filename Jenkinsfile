@@ -1,6 +1,14 @@
 pipeline {
 	agent any
 	
+	 environment
+    {
+  
+       
+        IMAGE = 'finops:latest'
+		
+    }
+	
 	stages {
 		stage ('Compile Stage') {
 			steps {
@@ -26,5 +34,14 @@ pipeline {
 			
 			}
 		}
+		stage('Docker build'){
+		    steps {
+			script{
+			    // Build the docker image using a Dockerfile
+			    docker.build("$IMAGE", "-f Dockerfile .")
+			}
+		    }
+		}
 	}
 }
+
